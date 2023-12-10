@@ -3,3 +3,8 @@
     /* height: 300px; */
     /* margin: 2.5% 0; */
 }
+
+.w-100 {
+    height: 500px;
+    object-fit: cover;
+}
