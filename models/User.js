@@ -10,8 +10,12 @@ const userSchema = mongoose.Schema({
         trim: true,
         unique: true
     },
-    email: String,
     name: String,
+    googleId: {
+        type: String,
+        required: true
+    },
+    email: String,
     DOB: Date,
     phoneNumber: String,
     Avatar: String,
@@ -20,6 +24,8 @@ const userSchema = mongoose.Schema({
         ref: 'Comments'
     }],
     role: Number
+}, {
+    timestamps: true
 })
 
 const User = mongoose.model("User", userSchema);
@@ -32,6 +38,8 @@ const cartSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'products'
     }]
+}, {
+    timestamps: true
 })
 
 const Cart = mongoose.model('Cart', cartSchema);
