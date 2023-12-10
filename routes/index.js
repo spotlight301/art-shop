@@ -22,7 +22,7 @@ router.get('/oauth2callback', passport.authenticate(
         failureRedirect: '/',
         successRedirect: function(req,res){
           //find if the user exists in the database or not
-          User.findId(res.locals.user)
+          User.findById(res.locals.user)
           //if they exist db (then the user is logging in)
           .then((userExists)=>{
               if(userExists){
