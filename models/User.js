@@ -12,25 +12,31 @@ const userSchema = mongoose.Schema({
     },
     email: String,
     name: String,
-    // DOB:
+    DOB: Date,
     phoneNumber: String,
     Avatar: String,
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comments'
     }],
-    shop: {
-        
-    },
-    cart: {
-
-    },
     role: Number
 })
 
-
 const User = mongoose.model("User", userSchema);
+
+const cartSchema = mongoose.Schema({
+    quantity: Number,
+    price: Number,
+    userId: [userSchema],
+    products: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'products'
+    }]
+})
+
+const Cart = mongoose.model('Cart', cartSchema);
+
 
 // Module Export
 
-module.exports = User
+module.exports = {User, Cart};
