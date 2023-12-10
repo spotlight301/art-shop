@@ -12,7 +12,8 @@ const productSchema = mongoose.Schema({
   order:{
     type:mongoose.Schema.Types.ObjectId,
     ref:'Order'
-  }
+  },
+  productType:String
 },
  {timestamps: true}
  );
