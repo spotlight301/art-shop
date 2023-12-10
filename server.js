@@ -51,11 +51,19 @@ app.use(expressLayouts);
 
 //Import routes
 const indexRouter = require('./routes/index');
-const userRouter = require('./routes/user')
+const userRouter = require('./routes/user');
+const productRouter = require('./routes/product');
+const shopRouter = require('./routes/shop');
+const orderRouter = require('./routes/order');
+const cartRouter = require('./routes/cart');
 
 //mount routes
 app.use("/" , indexRouter);
 app.use("/user" , userRouter);
+app.use("/product" , productRouter);
+app.use("/shop" , shopRouter);
+app.use("/cart" , cartRouter);
+app.use("/order" , orderRouter);
 
 app.listen(port , ()=> {
   console.log(`the application is working on port ${port}`);

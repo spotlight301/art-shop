@@ -2,10 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
-const ArtistPageController = require('../controllers/shop');
+const shopController = require('../controllers/shop');
 
 
-router.get('/shop', indexController.index_get);
+// router.get('/shop', shopController.shop_create_get);
 
 
 
