@@ -26,6 +26,8 @@ const db= require("./config/db");
 
 //asks nodejs to look for all the static files in public folder (CSS, JS, Audio, Videos, Images)
 app.use(express.static("public"));
+//for form process
+app.use(express.urlencoded({extended: true}));
 
 // Configure session middleware
 app.use(session({
