@@ -24,7 +24,7 @@ router.get('/oauth2callback', passport.authenticate(
     }
 ));
 
-
+// Sara checkout !!!!
 // OAuth logout route
 router.get('/logout', function(req, res){
     req.logout(function() {
