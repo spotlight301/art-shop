@@ -24,10 +24,11 @@ app.use(expressLayouts);
 
 //Import routes
 const indexRouter = require('./routes/index');
-
+const userRouter = require('./routes/user')
 
 //mount routes
 app.use("/" , indexRouter);
+app.use("/user" , userRouter);
 
 app.listen(port , ()=> {
   console.log(`the application is working on port ${port}`);
