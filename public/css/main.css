@@ -1,8 +1,9 @@
-
+/* 
 
 .w-100 {
 
     height: 400px;
+    height: 500px;
     object-fit: cover;
 }
 
@@ -28,16 +29,17 @@ body {
     font-weight: 400;
   }
   /* rtl:begin:ignore */
-  .marketing .col-lg-4 p {
+  /* .marketing .col-lg-4 p {
     margin-right: 12px;
     margin-left: 12px;
-  }
+  } */
   /* rtl:end:ignore */
 
   .featurette-divider {
-    margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    margin: 80px 0; 
+    /* Space out the Bootstrap <hr> more */
   }
-  
+   */
   /* Thin out the marketing headings */
   .featurette-heading {
     font-weight: 300;
