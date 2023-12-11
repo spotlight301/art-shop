@@ -1,0 +1,15 @@
+
+
+<h1>Shopping Cart</h1>
+<ul>
+  <% cartItems.forEach(item => { %>
+    <li><%= item.productName %> - $<%= item.price %> 
+        <form action="/cart/add-to-cart" method="POST">
+          <input type="hidden" name="productId" value="<%= item.productId %>">
+          <input type="hidden" name="productName" value="<%= item.productName %>">
+          <input type="hidden" name="price" value="<%= item.price %>">
+          <button type="submit">Add to Cart</button>
+        </form>
+    </li>
+  <% }) %>
+</ul>
