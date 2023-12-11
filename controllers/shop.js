@@ -25,7 +25,8 @@ console.log("shop" , shop)
     // Save Shop
     shop.save()
     .then(() => {
-        res.redirect("/product/add");
+        let shopId = req.body._id;
+        res.redirect("/product/add" , shopId);
     })
     .catch((err) => {
         console.log(err);
