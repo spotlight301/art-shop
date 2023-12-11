@@ -1,20 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 // const  role = require('kjafhd')
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     username: {
-        type: String,
-        lowercase: true,
-        // required: true,
-        trim: true,
-        unique: false
+      type: String,
+      lowercase: true,
+      // required: true,
+      trim: true,
+      unique: false,
     },
     name: String,
     googleId: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     email: String,
     DOB: Date,
@@ -24,27 +25,34 @@ const userSchema = new Schema({
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'Comments'
     // }],
-    role: Number
-}, {
-    timestamps: true
-})
+    role: Number,
+    isProfileSet: Boolean,
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const User = mongoose.model("User", userSchema);
 
-const cartSchema = mongoose.Schema({
+const cartSchema = mongoose.Schema(
+  {
     quantity: Number,
     price: Number,
     userId: [userSchema],
-    products: [{
+    products: [
+      {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'products'
-    }]
-}, {
-    timestamps: true
-})
+        ref: "products",
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Cart = mongoose.model('Cart', cartSchema);
-
+const Cart = mongoose.model("Cart", cartSchema);
 
 // Module Export
 module.exports = Cart;
