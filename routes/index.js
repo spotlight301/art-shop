@@ -1,9 +1,7 @@
 const express = require('express');
-
-const router = express.Router();
-
 const passport = require('passport');
 
+const router = express.Router();
 const indexController = require('../controllers/index');
 
 // Routes
@@ -41,7 +39,7 @@ router.get('/oauth2callback', passport.authenticate(
     }
 ));
 
-// Sara checkout !!!!
+
 // OAuth logout route
 router.get('/logout', function(req, res){
     req.logout(function() {

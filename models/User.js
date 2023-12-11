@@ -1,14 +1,15 @@
 const mongoose = require('mongoose');
 // const  role = require('kjafhd')
 
+const Schema = mongoose.Schema
 
-const userSchema = mongoose.Schema({
+const userSchema = new Schema({
     username: {
         type: String,
         lowercase: true,
-        required: true,
+        // required: true,
         trim: true,
-        unique: true
+        unique: false
     },
     name: String,
     googleId: {
@@ -18,11 +19,11 @@ const userSchema = mongoose.Schema({
     email: String,
     DOB: Date,
     phoneNumber: String,
-    Avatar: String,
-    comments: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Comments'
-    }],
+    avatar: String,
+    // comments: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Comments'
+    // }],
     role: Number
 }, {
     timestamps: true
@@ -46,5 +47,5 @@ const Cart = mongoose.model('Cart', cartSchema);
 
 
 // Module Export
-
-module.exports = {User, Cart};
+module.exports = Cart;
+module.exports = User;

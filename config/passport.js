@@ -27,7 +27,7 @@ passport.use(new GoogleStrategy(
             name: profile.displayName,
             googleId: profile.id,
             email: profile.emails[0].value,
-            Avatar: profile.photos[0].value
+            avatar: profile.photos[0].value
         });
         return cb(null,user);
     }
