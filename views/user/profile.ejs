@@ -5,17 +5,41 @@
 
   <div class="mb-3">
     <label for="formFile" class="form-label">Upload your avatar here</label>
-    <input class="form-control" type="file" id="formFile" name="Avatar">
+    <input class="form-control" type="file" id="formFile" name="Avatar" />
   </div>
-    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10 col-md-6">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%=userInfo.email%>">
-    </div>
+  <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+  <div class="col-sm-10 col-md-6">
+    <input
+      type="text"
+      readonly
+      class="form-control-plaintext"
+      id="staticEmail"
+      value="<%=userInfo.email%>"
+    />
+  </div>
 
-  <div class="col-md-12">
+
+  <div class="col-md-6">
     <label for="inputusername4" class="form-label">username</label>
-    <input type="text" class="form-control" id="inputusername4" name="username">
+    <input
+      type="text"
+      class="form-control"
+      id="inputusername4"
+      name="username"
+    />
   </div>
+  
+  <div class="col-md-6">
+    <label for="name4" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name4"
+      name="name"
+      value="<%=userInfo.name%>"
+    />
+  </div>
+
   <!-- <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Password</label>
     <input type="password" class="form-control" id="inputPassword4" name="password" >
@@ -23,36 +47,46 @@
    -->
   <div class="col-md-6">
     <label for="inputdate4" class="form-label">Date of Birth</label>
-    <input type="date" class="form-control" id="inputdate4" name="DOB">
+    <input type="date" class="form-control" id="inputdate4" name="DOB" />
   </div>
-  
+
   <div class="col-md-6">
     <label for="inputdate4" class="form-label">Phone number</label>
-    <input type="text" class="form-control" id="inputdate4" name="phoneNumber">
+    <input
+      type="text"
+      class="form-control"
+      id="inputdate4"
+      name="phoneNumber"
+    />
   </div>
-  
+
   <fieldset class="row mb-3 mt-3">
     <legend class="col-form-label col-sm-2 pt-0">Roles</legend>
     <div class="col-sm-10">
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="role" id="gridRadios1" value="1" checked>
-        <label class="form-check-label" for="gridRadios1">
-          User (Buyer)
-        </label>
+        <input
+          class="form-check-input"
+          type="radio"
+          name="role"
+          id="gridRadios1"
+          value="1"
+        />
+        <label class="form-check-label" for="gridRadios1"> User (Buyer) </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="2">
-        <label class="form-check-label" for="gridRadios2">
-          Seller
-        </label>
+        <input
+          class="form-check-input"
+          type="radio"
+          name="role"
+          id="gridRadios2"
+          value="2"
+        />
+        <label class="form-check-label" for="gridRadios2"> Seller </label>
       </div>
-      
     </div>
   </fieldset>
 
-
-
-  <div class="col-12  d-md-flex justify-content-md-end">
+  <div class="col-12 d-md-flex justify-content-md-end">
     <button type="submit" class="btn btn-primary">Sign in</button>
   </div>
 </form>
