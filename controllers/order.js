@@ -13,5 +13,5 @@ exports.order_index_get = (req,res) => {
 }
 
 exports.oreder_detail_get = (req,res) => {
-    res.render("order.detail")
+    res.render("order/detail")
 }
