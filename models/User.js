@@ -16,6 +16,7 @@ const userSchema = new Schema(
     googleId: {
       type: String,
       required: true,
+      unique: false,
     },
     email: String,
     DOB: Date,
@@ -35,25 +36,5 @@ const userSchema = new Schema(
 
 const User = mongoose.model("User", userSchema);
 
-const cartSchema = mongoose.Schema(
-  {
-    quantity: Number,
-    price: Number,
-    userId: [userSchema],
-    products: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "products",
-      },
-    ],
-  },
-  {
-    timestamps: true,
-  }
-);
 
-const Cart = mongoose.model("Cart", cartSchema);
-
-// Module Export
-module.exports = Cart;
 module.exports = User;

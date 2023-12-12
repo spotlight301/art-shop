@@ -2,6 +2,7 @@ const User = require("../models/User");
 const { Shop } = require("../models/Shop");
 const { Product } = require("../models/Product");
 const { order } = require("../models/Order");
+const upload = require('../config/multer');
 
 //get the user profile page and send userInfo object to get the user email and add it the form input
 module.exports.profile_create_get = (req, res) => {
