@@ -11,6 +11,15 @@ const passport = require("passport");
 //ask nodejs to look into views folder for the file named layout.ejs
 const expressLayouts = require("express-ejs-layouts");
 
+//require multer(upload) middleware
+const upload = require('./config/multer');
+
+
+// // Set up a route for file uploads
+// app.post('/upload', upload.single('image'), (req, res) => {
+//   // Handle the uploaded file
+// });
+
 //require and initialize dotenv
 require("dotenv").config();
 
