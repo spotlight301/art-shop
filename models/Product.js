@@ -9,10 +9,10 @@ const productSchema = mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     ref:'Shop'
   },
-  order:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'Order'
-  },
+  // order:{
+  //   type:mongoose.Schema.Types.ObjectId,
+  //   ref:'Order'
+  // },
   productType:String
 },
  {timestamps: true}
