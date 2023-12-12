@@ -6,8 +6,8 @@ let cartItems = [];
 router.get('/', (req, res) => {
   res.render('cart', { cartItems });
 });
-
-router.post('/add-to-cart', (req, res) => {
+-
+router.post('/add', (req, res) => {
   const { productId, productName, price } = req.body;
   cartItems.push({ productId, productName, price });
   res.redirect('/cart');
