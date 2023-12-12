@@ -47,6 +47,3 @@ module.exports.product_show_get = (req,res) => {
   })
 }
 
-module.exports.product_show_post = (req,res) => {
-  
-}

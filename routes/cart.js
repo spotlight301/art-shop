@@ -1,16 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-let cartItems = [];
+const cartController = require('../controllers/cart')
 
-router.get('/', (req, res) => {
-  res.render('cart', { cartItems });
-});
+router.get('/add', cartController.cart_add_get);
+router.post('/add', cartController.cart_add_post);
 
-router.post('/add-to-cart', (req, res) => {
-  const { productId, productName, price } = req.body;
-  cartItems.push({ productId, productName, price });
-  res.redirect('/cart');
-});
 
 module.exports = router;
