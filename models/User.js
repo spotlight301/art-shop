@@ -36,25 +36,5 @@ const userSchema = new Schema(
 
 const User = mongoose.model("User", userSchema);
 
-const cartSchema = mongoose.Schema(
-  {
-    quantity: Number,
-    price: Number,
-    userId: [userSchema],
-    product: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-      },
-    ],
-  },
-  {
-    timestamps: true,
-  }
-);
 
-const Cart = mongoose.model("Cart", cartSchema);
-
-// Module Export
-module.exports = Cart;
 module.exports = User;

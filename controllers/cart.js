@@ -1,22 +1,19 @@
 // controllers/cartController.js
-const Cart = require('../models/User}');
+const Cart = require('../models/User');
+const {Product} = require('../models/Product')
 
-const cartController = {
-    getCart: async (req, res) => {
-        try {
-            // Logic to get cart items
-        } catch (error) {
-            // Handle error
-        }
-    },
-    addToCart: async (req, res) => {
-        try {
-            // Logic to add item to the cart
-        } catch (error) {
-            // Handle error
-        }
-    },
-    // Implement other methods for updating, deleting, etc.
-};
+module.exports.cart_add_get = (req,res) => {
+    res.render('cart/index');
+}
 
-module.exports = cartController;
+module.exports.cart_add_post = (req,res) => {
+    console.log(req.body) 
+    Product.findById(req.body.id)
+    .then((product)=>{
+        
+    })
+    .catch(error => {
+        console.log("error in adding product to cart " , error)
+    })
+
+}
