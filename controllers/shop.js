@@ -7,7 +7,7 @@ const { Shop } = require("../models/Shop");
 exports.shop_index_get = (req,res) => {
     Shop.find()
     .then((shop) => {
-        res.render("shop/index")
+        res.render("shop/index", {shop})
     })
     .catch(err => {
         console.log(err)
@@ -21,14 +21,15 @@ exports.shop_create_get = (req,res) => {
 exports.shop_create_post = (req,res) => {
     console.log(req.body);
     let shop = new Shop(req.body)
-
+console.log("shop" , shop)
     // Save Shop
     shop.save()
     .then(() => {
-        res.redirect("/product/add");
+        let shopId = req.body._id;
+        res.redirect("/product/add" , shopId);
     })
     .catch((err) => {
         console.log(err);
-        res.render("please try again later")
+        res.send("please try again later")
     })
 }
