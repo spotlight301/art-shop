@@ -6,9 +6,13 @@ const upload = require('../config/multer');
 
 
 exports.shop_index_get = (req,res) => {
-    Shop.find()
-    .then((shop) => {
-        res.render("shop/index", {shop})
+    Product.find({shop:req.params.id})
+    .then((products) => {
+        Shop.find({shop:req.params.id})
+        .then((shop)=>{
+            res.render("shop/index", {shop , products})
+        })
+        .catch((error => console.log("error " , error)))
     })
     .catch(err => {
         console.log(err)
