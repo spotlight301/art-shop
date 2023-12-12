@@ -2,6 +2,7 @@
 const { User } = require("../models/User");
 const { Product } = require("../models/Product");
 const { Shop } = require("../models/Shop");
+const upload = require('../config/multer');
 
 
 exports.shop_index_get = (req,res) => {
@@ -17,6 +18,7 @@ exports.shop_index_get = (req,res) => {
 exports.shop_create_get = (req,res) => {
     res.render("shop/add")
 }
+
 
 // exports.shop_create_post = (req,res) => {
 //     console.log(req.body);
@@ -59,6 +61,7 @@ exports.shop_create_post = (req,res) => {
     shop.save()
     .then(() => {
         let shopId = shop.id;
+
         console.log(shop)
         res.redirect("/product/add?shopid="+ shopId);
     })
