@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const shopSchema = mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        unique: true
+    },
     logo: String,
     userId: {
         type: mongoose.Schema.Types.ObjectId,
