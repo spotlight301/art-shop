@@ -20,22 +20,53 @@ exports.shop_create_get = (req,res) => {
 }
 
 
+// exports.shop_create_post = (req,res) => {
+//     console.log(req.body);
+//     let shop = new Shop(req.body)
+//     // let shop = new Shop({
+//     //     name: req.body.name,
+//     //     userId: req.user.id
+//     // })
+//     // let user = new User(req.body)
+//     let newShop = {
+//         name: req.body.name,
+//         // userId: req.user.id
+//     }
+//     console.log(req.body.name)
+//     // console.log("shopuser" + req.shop.user.body)
+//     console.log("shop" , shop)
+//     // Save Shop
+//     shop.save()
+//     .then(() => {
+//         let shopId = shop.id;
+//         console.log(shop)
+//         res.redirect("/product/add?shopid="+ shopId);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//         res.send("please try again later")
+//     })
+//   }
+
 exports.shop_create_post = (req,res) => {
     console.log(req.body);
+    console.log(req.user);
+    // let shop = new Shop(req.body)
     let shop = new Shop({
-      logo:req.file.filename,
-      name: req.body.name,
-      userId: req.user.id
+        name: req.body.name,
+        userId: req.user.id
     })
-console.log("shop" , shop)
+    console.log("shop" , shop)
     // Save Shop
     shop.save()
     .then(() => {
         let shopId = shop.id;
-        res.redirect("/product/add?shopId=" + shopId);
+
+        console.log(shop)
+        res.redirect("/product/add?shopid="+ shopId);
     })
     .catch((err) => {
         console.log(err);
         res.send("please try again later")
     })
-}
+  }

@@ -52,6 +52,7 @@ app.use(passport.session());
 
 app.use(function (req, res, next) {
   console.log("middleware", req.user);
+  // Pass profile from passport.js after authentication (holds all the user info)
   res.locals.user = req.user;
   next();
 });
