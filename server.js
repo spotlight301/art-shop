@@ -12,8 +12,7 @@ const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 
 //require multer(upload) middleware
-const upload = require('./config/multer');
-
+const upload = require("./config/multer");
 
 // // Set up a route for file uploads
 // app.post('/upload', upload.single('image'), (req, res) => {
