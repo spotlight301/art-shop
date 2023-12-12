@@ -20,6 +20,7 @@ passport.use(
         });
         // If there is a user, return it
         if (user) {
+          console.log("found user " , user)
           return cb(null, user);
         } else {
           // Else, create a new user
@@ -30,6 +31,7 @@ passport.use(
             avatar: profile.photos[0].value,
             isProfileSet: false,
           });
+          console.log(" the user profile" , profile)
           return cb(null, user);
         }
       } catch (err) {

@@ -16,6 +16,7 @@ const userSchema = new Schema(
     googleId: {
       type: String,
       required: true,
+      unique: false,
     },
     email: String,
     DOB: Date,
