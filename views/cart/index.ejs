@@ -1,17 +1,33 @@
 
 
+
+
+
+<h1>Your Cart</h1>
+
+<ul>
+    <% cart.products.forEach(itemInCart => { %>
+      <li>
+        Product name: <%= itemInCart.id  %>
+        Quantity: <%= itemInCart.quantity %>
+        Price: <%= itemInCart.price %>
+      </li>
+    <% }); %>
+  </ul>
+  
+
+
 <h1 class="col-md-12 text-center mt-3 mb-4">Shopping Cart</h1>
 <ul>
-  <% cartItems.forEach(item => { %>
-    <li><%= item.productName %> - $<%= item.price %> 
+    <li>
         <form action="/cart/add-to-cart" method="POST">
-          <input type="hidden" name="productId" value="<%= item.productId %>">
-          <input type="hidden" name="productName" value="<%= item.productName %>">
-          <input type="hidden" name="price" value="<%= item.price %>">
+          <input type="hidden" name="productId" value="">
+          <input type="hidden" name="productName" value="">
+          <input type="hidden" name="price" value="">
           <button type="submit">Add to Cart</button>
         </form>
     </li>
-  <% }) %>
+
 </ul>
 
 
@@ -59,7 +75,7 @@
                             <div class="col-md-4">
                                 <div class="mt-3">
                                     <p class="text-muted mb-2">Price</p>
-                                    <h5 class="mb-0 mt-2"><span class="text-muted me-2"><del class="font-size-16 fw-normal">$500</del></span>$450</h5>
+                                    <h5 class="mb-0 mt-2"><span class="text-muted me-2"></span></h5>
                                 </div>
                             </div>
                             <div class="col-md-5">
