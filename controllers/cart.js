@@ -13,8 +13,8 @@ module.exports.cart_add_get = (req, res) => {
       },
     })
     .then((cart) => {
-      // console.log("cart details GET", cart.products)
-      res.render("cart/index", { cart });
+      console.log("cart details GET", cart)
+      res.render("cart/index", {cart});
     })
     .catch((err) => {
       console.log(err);
