@@ -47,3 +47,12 @@ module.exports.product_show_get = (req,res) => {
   })
 }
 
+exports.product_list_get = (req,res) => {
+  Product.find()
+  .then((product) => {
+  res.render("product/list", {product});
+})
+.catch((err) => {
+  console.log(err)
+})
+}
