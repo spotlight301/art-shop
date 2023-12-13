@@ -8,7 +8,7 @@
 <ul>
     <% cart.products.forEach(itemInCart => { %>
       <li>
-        Product name: <%= itemInCart.id  %>
+        Product name: <%= itemInCart.id.productName  %>
         Quantity: <%= itemInCart.quantity %>
         Price: <%= itemInCart.price %>
       </li>
