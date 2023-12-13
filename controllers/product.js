@@ -47,3 +47,24 @@ module.exports.product_show_get = (req,res) => {
   })
 }
 
+exports.product_edit_get = (req, res) => {
+  Product.findById(req.query.id)
+  .then((product) => {
+    res.render("product/edit", {product})
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
+
+exports.product_update_put = (req, res) => {
+  Product.findByIdAndUpdate(req.body.id, req.body)
+  .then(() => {
+    res.redirect('/shop/index/' + req.body.shopid);
+  })
+  .catch((err) => {
+    res.send('Something went wrong!')
+    console.log(err);
+  })
+}
+

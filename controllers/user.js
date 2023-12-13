@@ -22,6 +22,7 @@ module.exports.profile_create_post = (req, res) => {
   console.log(req.body);
   let username = req.body.username;
   let phoneNumber = req.body.phoneNumber;
+  // let avatar = req.file.filename
   let DOB = req.body.DOB;
   let role = req.body.role;
   let googleId = res.locals.user.googleId;
