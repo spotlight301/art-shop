@@ -4,7 +4,7 @@ const { Order } = require("../models/Order");
 const { Cart } = require("../models/Cart");
 
 exports.order_index_get = (req, res) => {
-  Order.find()
+  Order.find({userId:req.user._id})
     .then((orders) => {
       res.render("order/index", { orders });
     })

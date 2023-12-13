@@ -29,8 +29,9 @@
                 Home
               </a>
             </li>
+            <% if(user.role == 1){ %>
             <li>
-              <a href="#" class="nav-link text-white">
+              <a href="/product/list" class="nav-link text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
                 </svg>
@@ -59,6 +60,7 @@
                 </form>
               </a>
             </li>
+            <% } %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -70,7 +72,7 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
                 <% if(user.role == 2) { %>
-                <li><a class="dropdown-item" href="">My Shop</a></li>
+                <li><a class="dropdown-item" href="/shop/index/<%=user._id %>">My Shop</a></li>
                 <% } %>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="nav-link active dropdown-item" aria-current="page" href="/logout">Sign out</a></li>

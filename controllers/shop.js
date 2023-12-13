@@ -4,19 +4,22 @@ const { Shop } = require("../models/Shop");
 const upload = require("../config/multer");
 
 exports.shop_index_get = (req, res) => {
-  Product.find({ shop: req.params.id })
-    .then((products) => {
-      console.log("get the products info in shop/index page", products);
-      Shop.findOne({ _id: req.params.id })
-        .then((shop) => {
-          console.log("the shop to get logo (for index get) : ", shop);
+
+    Shop.findOne({ userId: req.params.id })
+    .then((shop) => {
+        Product.find({ shop: shop._id })
+        .then((products) => {
+          console.log("get the products info in shop/index page", products);
           res.render("shop/index", { shop, products });
         })
-        .catch((error) => console.log("error ", error));
+        .catch((err) => {
+          console.log(err);
+        });
+      console.log("the shop to get logo (for index get) : ", shop);
+    
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((error) => console.log("error ", error));
+
 };
 
 exports.shop_create_get = (req, res) => {

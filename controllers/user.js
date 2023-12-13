@@ -28,7 +28,7 @@ module.exports.profile_create_post = (req, res) => {
   let DOB = req.body.DOB;
   let role = req.body.role;
   let googleId = res.locals.user.googleId;
-let updatedUser = {username, phoneNumber , DOB , role , googleId , isProfileSet:true};
+let updatedUser = {username, phoneNumber, DOB , role , googleId , isProfileSet:true};
    User.findByIdAndUpdate(req.user._id , updatedUser)
     .then(() => {
       console.log("here", role);
