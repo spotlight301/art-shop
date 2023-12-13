@@ -1,5 +1,5 @@
 // controllers/cartController.js
-const Cart = require('../models/User}');
+const Cart = require('../models/User');
 
 const cartController = {
     getCart: async (req, res) => {
