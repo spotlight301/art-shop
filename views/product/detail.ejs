@@ -7,17 +7,17 @@
 
               <h1 class="display-5 fw-bolder"></h1>
               <div class="fs-5 mb-5">
-                <span> BHD</span>
+                <%= product.price%> <span> BHD</span>
             </div>
               <p class="lead"><%=product.description%></p>
+              <input type="hidden" name="id" value="<%=product._id%>" />
               <div class="d-flex">
-                  <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                  <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" name="quantity" style="max-width: 3rem" />
                   <button class="btn btn-outline-dark flex-shrink-0" type="submit">
                       <i class="bi-cart-fill me-1"></i>
                       Add to cart
                   </button>
               </div>
-              <input type="hidden" name="id" value="<%=product._id%>" />
           </form>
       </div>
   </div>
