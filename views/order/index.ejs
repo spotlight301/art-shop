@@ -1,26 +1,23 @@
 <h1>Orders</h1>
 
 <table class="table table-dark table-hover">
-    <tr>
-        <th>Order id</th>
-        <th>Status</th>
-        <th>Ordered Date</th>
-        <th>Edit Order</th>
-    </tr>
-    <!-- loop -->
-    <% orders.forEach(function (order,index) { %>
-        <tr>
-            <td>
-                
-            </td>
-            <td><%= order.status %></td>
-            <td><%= order.ceartedAt %></td>
-            <td>
-                <a href="order/detail?id=<%= order._id %>" class="btn btn-outline-dark">
-                    Edit
-                </a>
-            </td>
-        </tr>
-    <% }) %>
-    
+  <tr>
+    <th>Order id</th>
+    <th>Status</th>
+    <th>Ordered Date</th>
+    <th>View Order</th>
+  </tr>
+  <!-- loop -->
+  <% let x=1; orders.forEach(function (order, index) { %>
+  <tr>
+    <td><%= x %></td>
+    <td><%= order.status %></td>
+    <td><%= order.createdAt %></td>
+    <td>
+      <a href="/order/detail?id=<%= order._id %>" class="btn btn-outline-dark">
+        View
+      </a>
+    </td>
+  </tr>
+  <% x++; }) %>
 </table>
