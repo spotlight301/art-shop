@@ -1,6 +1,7 @@
 const { User } = require("../models/User");
 const { Product } = require("../models/Product");
 const { Order } = require("../models/Order");
+const { Cart } = require("../models/Cart");
 
 exports.order_index_get = (req,res) => {
     Order.find()
@@ -12,6 +13,18 @@ exports.order_index_get = (req,res) => {
     })
 }
 
+exports.order_add_post = (req,res) => {
+    Cart.findOne({userId: req.user._id})
+    .then(cart=>{
+        let order = new Order({
+            userId: req.user._id,
+            products: cart.products,
+            status: pending
+        })
+    })
+}
+
 exports.oreder_detail_get = (req,res) => {
+    
     res.render("order/detail")
 }

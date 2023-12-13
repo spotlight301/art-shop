@@ -1,17 +1,6 @@
-<h1>Your Cart</h1>
 
 <h1 class="col-md-12 text-center mt-3 mb-4">Shopping Cart</h1>
-<ul>
-  <li>
-    <form action="/cart/add-to-cart" method="POST">
-      <input type="hidden" name="productId" value="" />
-      <input type="hidden" name="productName" value="" />
-      <input type="hidden" name="price" value="" />
-      <button type="submit">Add to Cart</button>
-    </form>
-  </li>
-</ul>
-
+<form action="/order/add" method="post">
 <% cart.products.forEach(itemInCart => { %>
 <div class="container">
   <div class="row">
@@ -91,3 +80,5 @@
   </div>
 </div>
 <% }); %>
+<button type="submit">Place Order</button>
+</form>
