@@ -94,4 +94,14 @@ module.exports.cart_add_post = async (req, res) => {
   }
 };
 
-module.exports.cart_delete_get = (req, res) => {};
+module.exports.cart_delete_get = (req, res) => {
+  Cart.findOne({userId:req.user.id})
+  .then((cart)=>{
+    let idx = cart.products.findIndex(product=> product._id === req.query.id)
+    cart.products.splice(idx, 1)
+    cart.save()
+    .then(()=> res.redirect('/cart/add'))
+    .catch()
+  })
+  .catch()
+};
