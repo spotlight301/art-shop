@@ -16,8 +16,9 @@ router.get('/list', productController.product_list_get);
 // router.post('/detail/addToCart' , productController.product_show_post);
 
 // router.get('/add' , productController.)
-router.get('/edit', productController.product_edit_get)
-router.put('/update', productController.product_update_put)
+router.get('/edit', productController.product_edit_get);
+router.put('/update',upload.single('image'),productController.product_update_put);
+router.get('/delete', productController.product_delete_get);
 
 
 

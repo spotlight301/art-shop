@@ -48,9 +48,11 @@ module.exports.product_show_get = (req,res) => {
 }
 
 exports.product_edit_get = (req, res) => {
+  console.log("id for product:",req.query.id)
   Product.findById(req.query.id)
   .then((product) => {
-    res.render("product/edit", {product})
+    console.log("the product info :" , product)
+    res.render("product/edit", {product, shopid: req.query.shopid})
   })
   .catch(err => {
     console.log(err);
@@ -58,7 +60,18 @@ exports.product_edit_get = (req, res) => {
 }
 
 exports.product_update_put = (req, res) => {
-  Product.findByIdAndUpdate(req.body.id, req.body)
+  console.log("the body: " , req.body)
+  console.log("the body: " , req.file)
+  console.log("the product id: " , req.body.id)
+  let updatedProduct = {
+    image: req.file.filename,
+    productName: req.body.productName,
+    price: req.body.price,
+    description: req.body.description,
+    productType: req.body.productType,
+  }
+  Product.findByIdAndUpdate(req.body.id, updatedProduct)
+
   .then(() => {
     res.redirect('/shop/index/' + req.body.shopid);
   })
@@ -76,4 +89,18 @@ exports.product_list_get = (req,res) => {
 .catch((err) => {
   console.log(err)
 })
+}
+
+
+exports.product_delete_get = (req, res) => {
+  console.log(req.query.id);
+  console.log(req.query)
+  Product.findByIdAndDelete(req.query.id)
+  .then(() => {
+    console.log("shopid:", req.query.shopid)
+    res.redirect('/shop/index/' + req.query.shopid);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
 }
