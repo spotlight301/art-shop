@@ -21,7 +21,11 @@ exports.order_add_post = (req,res) => {
             products: cart.products,
             status: pending
         })
+        order.save()
+        
     })
+    .catch(error=>{console.log("the error in adding order" , error);})
+
 }
 
 exports.oreder_detail_get = (req,res) => {

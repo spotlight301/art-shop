@@ -29,11 +29,10 @@
                     <h1><%=product.productName%></h1>
                     <p class="card-text"><%=product.description%></p>
                     <div class="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <a href ="/product/edit?id=<%=product._id%>&shopid=<%=shop._id%>" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
-                        <a href="/product/delete?id=<%=product._id%>&shopid=<%=shop._id%>" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
-                      </div>
-                      <small class="text-muted">9 mins</small>
+                      <a href="/cart/add?id=<%=product._id%>" class="btn btn-sm btn-outline-secondary" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Add to cart
+                      </a>
                     </div>
                   </div>
                   </a>
