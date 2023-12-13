@@ -3,11 +3,13 @@ const { Shop } = require("../models/Shop");
 const { Product } = require("../models/Product");
 const { order } = require("../models/Order");
 const upload = require('../config/multer');
+const dayjs = require('dayjs')
 
 //get the user profile page and send userInfo object to get the user email and add it the form input
 module.exports.profile_create_get = (req, res) => {
   User.findById(req.user._id)
     .then((userInfo) => {
+      userInfo.dobFormatted = dayjs(userInfo.DOB).format("YYYY-MM-DD")
       res.render("user/profile", { userInfo });
     })
     .catch((error) => {
