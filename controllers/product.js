@@ -83,8 +83,8 @@ exports.product_update_put = (req, res) => {
 
 exports.product_list_get = (req,res) => {
   Product.find()
-  .then((product) => {
-  res.render("product/list", {product});
+  .then((products) => {
+  res.render("product/list", {products});
 })
 .catch((err) => {
   console.log(err)
