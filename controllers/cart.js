@@ -103,3 +103,7 @@ console.log("error in adding the product in cart " , error);
 }
 
 };
+
+module.exports.cart_delete_get = (req,res) =>{
+  
+}

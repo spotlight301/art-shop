@@ -4,7 +4,7 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <img src="<%= shop.logo %>" alt="Shop Logo">
+        <img src="/uploads/<%= shop.logo %>" alt="Shop Logo">
         <h1><%= shop.name %></h1>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
@@ -28,8 +28,8 @@
               <p class="card-text"><%=product.description%></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href ="3" type="button" class="btn btn-sm btn-outline-secondary">View</a>
-                  <a href="" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a href ="/product/edit?=<%=product._id%>" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a href="/product/delete?=<%=product._id%>" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
                 </div>
                 <small class="text-muted">9 mins</small>
               </div>
