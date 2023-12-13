@@ -1,5 +1,6 @@
 
 <main>
+  <a href="/product/add?shopid=<%=shop.id%>" type="button" class="btn btn-sm btn-outline-secondary">Add product</a>
 
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
@@ -20,9 +21,11 @@
         
         <div class="col">
           <% products.forEach(function(product){%>
-          <div class="card shadow-sm">
+         <a href="/product/detail?id=<%= product._id %>">
+            <div class="card shadow-sm">
             
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="uploads/<%= product.image %>" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><img src="/uploads/<%= product.image %>"></svg>
+            
+              <img style="width: 100%;" src="/uploads/<%= product.image %>">
             <div class="card-body">
               <h1><%=product.productName%></h1>
               <p class="card-text"><%=product.description%></p>
@@ -34,7 +37,8 @@
                 <small class="text-muted">9 mins</small>
               </div>
             </div>
-            <%})%>
+            </a>
+            <%})%> 
           </div>
         </div>
       </div> 
