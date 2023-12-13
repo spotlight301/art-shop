@@ -3,7 +3,23 @@ const {Cart} = require("../models/Cart");
 const {Product} = require("../models/Product");
 const mongoose = require('mongoose')
 module.exports.cart_add_get = (req, res) => {
-  res.render("cart/index");
+
+
+    //   console.log("cart._id", cart._id)
+  Cart.findOne({userId: req.user._id}).populate({
+    'path' : 'products',
+    populate: {
+        path: 'id',
+        model: 'Product'
+    }
+  })
+  .then((cart) => {
+    // console.log("cart details GET", cart.products)
+    res.render('cart/index', { cart });
+  })
+  .catch(err => {
+    console.log(err)
+  })
 };
 
 module.exports.cart_add_post = async(req, res) => {
@@ -78,10 +94,7 @@ if(!cart){
   await cart.save();
 }
 
-  // cart = await Cart.findOne({ userId: req.user._id }).populate('product.id');
-
-  res.render('cart/index', { cart });
-
+ res.redirect("/cart/add")
 
 }
   
