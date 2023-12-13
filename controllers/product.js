@@ -18,8 +18,8 @@ module.exports.product_create_post =  (req, res) => {
     productType: req.body.productType,
     shop: req.body.shopid
   })
+  console.log("the image :",product.image)
   console.log(" product",product);
-  console.log("image" , product.image);
   console.log(" product name",product.productName);
   console.log("shop id " , product.shop);
   product.save()
