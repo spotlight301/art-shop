@@ -14,7 +14,7 @@ module.exports.cart_add_get = (req, res) => {
     })
     .then((cart) => {
       console.log("cart details GET", cart.products);
-      res.render("cart/index", {cart});
+      res.render("cart/index", { cart });
     })
     .catch((err) => {
       console.log(err);
