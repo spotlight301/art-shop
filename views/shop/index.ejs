@@ -31,8 +31,8 @@
               <p class="card-text"><%=product.description%></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href ="/product/edit?=<%=product._id%>" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
-                  <a href="/product/delete?=<%=product._id%>" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                  <a href ="/product/edit?id=<%=product._id%>&shopid=<%=shop._id%>" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a href="/product/delete?id=<%=product._id%>&shopid=<%=shop._id%>" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
                 </div>
                 <small class="text-muted">9 mins</small>
               </div>
