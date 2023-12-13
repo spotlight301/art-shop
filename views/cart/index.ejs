@@ -21,7 +21,7 @@
           <div class="d-flex align-items-start border-bottom pb-3">
             <div class="me-4">
               <img
-                src="https://www.bootdey.com/image/380x380/008B8B/000000"
+                src="/uploads/<%= itemInCart.id.image %>"
                 alt=""
                 class="avatar-lg rounded"
               />
@@ -62,26 +62,24 @@
 
           <div>
             <div class="row">
-              <div class="col-md-4">
-                <div class="mt-3">
-                  <p class="text-muted mb-2">Price: <%= itemInCart.price %></p>
-                  <h5 class="mb-0 mt-2">
-                    <span class="text-muted me-2"></span>
-                  </h5>
-                </div>
-              </div>
               <div class="col-md-5">
                 <div class="mt-3">
                   <p class="text-muted mb-2">Quantity</p>
                   <div class="d-inline-flex">
-                    <input type="number" name="quantity" id="" value="<%= itemInCart.quantity %>" min="1">
+                    <input
+                      type="number"
+                      name="quantity"
+                      id=""
+                      value="<%= itemInCart.quantity %>"
+                      min="1"
+                    />
                   </div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="mt-3">
-                  <p class="text-muted mb-2">Total</p>
-                  <h5>$900</h5>
+                  <p class="text-muted mb-2">Price</p>
+                  <h5><%= itemInCart.price %></h5>
                 </div>
               </div>
             </div>

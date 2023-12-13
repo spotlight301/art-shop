@@ -38,7 +38,7 @@ module.exports.product_create_post =  (req, res) => {
 module.exports.product_show_get = (req,res) => {
   console.log(req.query.id);
   // Product.findById(req.query.id)
-  Product.findById('6577468f52e45f332b893e81')
+  Product.findById(req.query.id)
   .then((product) => {
     res.render('product/detail' , {product})
   })
