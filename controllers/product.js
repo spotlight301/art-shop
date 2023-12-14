@@ -141,9 +141,17 @@ exports.product_delete_get = (req, res) => {
   console.log(req.query.id);
   console.log(req.query)
   Product.findByIdAndDelete(req.query.id)
-  .then(() => {
-    console.log("shopid:", req.query.shopid)
-    res.redirect('/shop/index/' + req.query.shopid);
+  .then((prd) => {
+    Shop.findById(prd.shop)
+    .then(shop=>{
+      console.log("shopid:", req.query.shopid)
+      res.redirect('/shop/index/' + shop.userId);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+    
+   
   })
   .catch((err) => {
     console.log(err);
