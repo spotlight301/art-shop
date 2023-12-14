@@ -101,8 +101,8 @@ body {
 section {
   padding: 20px;
   margin: 20px;
-  background-color: #e1b382;
-  border: 6px solid gold;
+  /* background-color: #e1b382;
+  border: 6px solid gold; */
 }
 h1,h2 {
   color: #2d545e;

@@ -44,7 +44,7 @@ exports.shop_create_post = (req, res) => {
     .then(() => {
       let shopId = shop.id;
       console.log(shop);
-      res.redirect("/product/add?shopid=" + shopId);
+      res.redirect("/product/add?shopid=" + shopId+'&userid=' + shop.userId);
     })
     .catch((err) => {
       console.log(err);

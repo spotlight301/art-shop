@@ -5,6 +5,7 @@ const  {Product} = require("../models/Product");
 const upload = require('../config/multer');
 
 module.exports.product_create_get= (req,res) =>{
+ 
   res.render('product/add',{shopid: req.query.shopid});
 }
 
@@ -44,8 +45,15 @@ module.exports.product_create_post = (req, res) => {
 
   product.save()
     .then(() => {
-      console.log('req.boooody', req.body.shopid)
-      res.redirect(`/shop/index/${req.body.shopid}`);
+      Shop.findById(req.body.shopid)
+      .then(shop=>{
+        console.log('req.boooody', req.body.shopid)
+        res.redirect(`/shop/index/${shop.userId}`);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+     
     })
     .catch(error => {
       res.send('Something went wrong');
@@ -72,8 +80,16 @@ exports.product_edit_get = (req, res) => {
   console.log("id for product:",req.query.id)
   Product.findById(req.query.id)
   .then((product) => {
-    console.log("the product info :" , product)
-    res.render("product/edit", {product, shopid: req.query.shopid})
+    Shop.findById(product.shop)
+    .then(shop=>{
+      console.log("the product info :" , product)
+      console.log("the shop info :" , shop)
+      res.render("product/edit", {product,shop})
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+    
   })
   .catch(err => {
     console.log(err);
@@ -84,8 +100,15 @@ exports.product_update_put = (req, res) => {
   console.log("the body: " , req.body)
   console.log("the body: " , req.file)
   console.log("the product id: " , req.body.id)
+  let img= "";
+  if(req.file){
+    img = req.file.filename
+  }
+  else{
+    img = req.body.image
+  }
   let updatedProduct = {
-    image: req.file.filename,
+    image: img,
     productName: req.body.productName,
     price: req.body.price,
     description: req.body.description,
@@ -94,7 +117,8 @@ exports.product_update_put = (req, res) => {
   Product.findByIdAndUpdate(req.body.id, updatedProduct)
 
   .then(() => {
-    res.redirect('/shop/index/' + req.body.shopid);
+    console.log("id +=-"+req.body.shopid);
+    res.redirect('/shop/index/'+ req.body.shopid);
   })
   .catch((err) => {
     res.send('Something went wrong!')

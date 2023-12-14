@@ -92,7 +92,7 @@ module.exports.cart_add_post = async (req, res) => {
     }
 
     await cart.save();
-    res.render("cart/index", { cart });
+    res.redirect("/cart/add");
   } catch (error) {
     console.log("error in adding the product in cart ", error);
   }
