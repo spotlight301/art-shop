@@ -7,6 +7,9 @@ AlI Abdulla
 # artist-ecommerce
 ecommerce platform tailored specifically for passionate and talented art creators in Bahrain! Our website serves as a dynamic marketplace, offering a vibrant and diverse collection of unique art pieces and products that encapsulate the rich cultural heritage and artistic flair of Bahrain.
 
+# ERD
+![artist-ecommerce-erd](https://github.com/SaraNedhal/artist-ecommerce/assets/100535445/0428faca-ea39-469b-84d1-072bcc7cba11)
+
 
 # features of the app/platform 
 Buyer Features:
