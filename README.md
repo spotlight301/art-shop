@@ -1,7 +1,7 @@
 # Team members 
-Sara Nedhal
-Kawther Mahfoodh
-AlI Abdulla
+-Sara Nedhal
+-Kawther Mahfoodh
+-AlI Abdulla
 
 
 # artist-ecommerce
