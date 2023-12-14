@@ -7,8 +7,10 @@ exports.shop_index_get = (req, res) => {
 
     Shop.findOne({ userId: req.params.id })
     .then((shop) => {
+        console.log( 'shop:', shop._id )
         Product.find({ shop: shop._id })
         .then((products) => {
+            console.log('shop shop shop',shop._id)
           console.log("get the products info in shop/index page", products);
           res.render("shop/index", { shop, products });
         })
@@ -42,7 +44,7 @@ exports.shop_create_post = (req, res) => {
     .then(() => {
       let shopId = shop.id;
       console.log(shop);
-      res.redirect("/product/add?shopid=" + shopId);
+      res.redirect("/product/add?shopid=" + shopId+'&userid=' + shop.userId);
     })
     .catch((err) => {
       console.log(err);

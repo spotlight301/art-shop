@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/main.css">
@@ -16,7 +17,7 @@
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            <img src="/img/IMG_0169-removebg-preview.PNG" alt="Logo" width="130" height="auto">
           </a>
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
@@ -35,7 +36,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
                 </svg>
-                Shop
+                Products
               </a>
             </li>
             <li>
@@ -51,11 +52,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
                   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
                 </svg>
-                  <!-- <button class="btn btn-outline-dark" type="submit">
-                    <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                             <h6 class="text-light" style="display: inline;">Cart</h6> 
-                      <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                  </button> -->
                   Cart
                 </form>
               </a>
@@ -67,7 +63,7 @@
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
-                User
+                <%= user.username %>
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
@@ -92,23 +88,9 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                     <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z"/>
                   </svg>
-                  Shop
+                  Products
                 </a>
               </li>
-              <!-- <li>
-                <a href="/cart/add" class="nav-link text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
-                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
-                  </svg> -->
-                    <!-- <button class="btn btn-outline-dark" type="submit">
-                      <i class="fa-solid fa-cart-shopping" style="color: #000000;"></i>
-                               <h6 class="text-light" style="display: inline;">Cart</h6> 
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                    </button> -->
-                    <!-- Cart
-                  </form>
-                </a>
-              </li> -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <svg xmlns="http://www.w3.org/2000/svg" class="d-block mx-auto mb-1" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -123,19 +105,16 @@
                 </ul>
               </li>
               <% } %>
-            <!-- <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
-                User
-              </a>
-            </li> -->
           </ul>
         </div>
       </div>
     </div>
   </header>
-
-  <%- body %>
+  <body>
+    
+    <%- body %>
+  </body>
+  
   <footer class="container">
     <p class="float-end"><a href="#">Back to top</a></p>
     <p>&copy; 2023 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>

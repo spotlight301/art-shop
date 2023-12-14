@@ -68,27 +68,31 @@ module.exports.cart_add_post = async (req, res) => {
     let cart = await Cart.findOne({ userId: req.user._id });
     console.log(" my cart has products :", cart);
 
-    if (!cart) {
+        if (!cart) {
       cart = new Cart({ userId: req.user._id, products: [] });
-      cart.products.push({
-        id: productId,
-        quantity: req.body.quantity,
-        price: product.price,
-      });
-
-      await cart.save();
-      // res.render('cart/index', { cart });
-    } else {
-      cart.products.push({
-        id: productId,
-        quantity: req.body.quantity,
-        price: product.price,
-      });
-
-      await cart.save();
     }
 
-    res.render("cart/index", { cart });
+    // Check if the product already exists in the cart
+    const existingProduct = cart.products.find(
+      (p) => p.id.toString() === productId
+    );
+
+    if (existingProduct) {
+      // Update quantity if the product is already in the cart
+      existingProduct.quantity += parseInt(req.body.quantity, 10);
+    } else {
+      // Add the product to the cart if it doesn't exist
+      const cartProduct = {
+        id: productId,
+        quantity: parseInt(req.body.quantity, 10),
+        price: product.price
+      };
+
+      cart.products.push(cartProduct);
+    }
+
+    await cart.save();
+    res.redirect("/cart/add");
   } catch (error) {
     console.log("error in adding the product in cart ", error);
   }

@@ -1,24 +1,32 @@
 <section class="py-5">
-  <div class="container px-4 px-lg-5 my-5">
+    <div class="container px-4 px-lg-5 my-5">
       <div class="row gx-4 gx-lg-5 align-items-center">
-          <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/uploads/<%=product.image%>" alt="..." /></div>
-          
-          <form class="col-md-6" method="post" action="/cart/add">
-
-              <h1 class="display-5 fw-bolder"><%= product.productName %></h1>
-              <div class="fs-5 mb-5">
-                <%= product.price%> <span> BHD</span>
-            </div>
-              <p class="lead"><%=product.description%></p>
-              <input type="hidden" name="id" value="<%=product._id%>" />
-              <div class="d-flex">
-                  <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" name="quantity" style="max-width: 3rem" />
-                  <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                      <i class="bi-cart-fill me-1"></i>
-                      Add to cart
-                  </button>
-              </div>
-          </form>
+        <div class="col-md-6">
+          <img class="img-fluid rounded mb-5 mb-md-0" src="/uploads/<%= product.image %>" alt="<%= product.productName %> Image" />
+        </div>
+        
+        <form class="col-md-6" method="post" action="/cart/add">
+  
+          <h1 class="display-4 fw-bolder"><%= product.productName %></h1>
+          <div class="h2">
+            <%= product.price %> <span class="text-muted">BHD</span>
+          </div>
+          <p class="lead"><%= product.description %></p>
+  
+          <input type="hidden" name="id" value="<%= product._id %>" />
+  
+          <div class="d-flex align-items-center mt-4">
+            <input class="form-control me-3" id="inputQuantity" type="number" value="1" name="quantity" style="max-width: 4rem" />
+            <button class="btn btn-dark" type="submit">
+              <i class="bi-cart-fill me-1"></i>
+              Add to Cart
+            </button>
+            <input type="hidden" name="productName" value="<%= product.productName %>" />
+            <input type="hidden" name="productImage" value="<%= product.image %>" />
+          </div>
+  
+        </form>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
+  
