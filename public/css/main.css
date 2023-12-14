@@ -80,7 +80,44 @@ main {
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
-        -webkit-user-select: none;
-              -moz-user-select: none;
-        user-select: none;
-      }
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif; /* Use Open Sans for the body text */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Use Montserrat for headings */
+}
+
+body {
+  background: #eaebd7;
+  font-family: sans-serif;
+  font-size: 1.3em;
+}
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #e1b382;
+  border: 6px solid gold;
+}
+h1,h2 {
+  color: #2d545e;
+}
+p {
+  color: #7d99a0;
+}
+a:link,
+a:visited {
+  color: #66c1c8;
+}
+a:hover {
+  color: #8a623c;
+}
+a:active {
+  background: #8a623c;
+  color: #eaebd7;
+}

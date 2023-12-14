@@ -4,6 +4,7 @@ const passport = require("passport");
 const router = express.Router();
 const indexController = require("../controllers/index");
 const User = require("../models/User");
+// const Product = require('../models/Product');
 
 // Routes
 router.get("/", indexController.index_get);

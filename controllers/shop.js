@@ -7,8 +7,10 @@ exports.shop_index_get = (req, res) => {
 
     Shop.findOne({ userId: req.params.id })
     .then((shop) => {
+        console.log( 'shop:', shop._id )
         Product.find({ shop: shop._id })
         .then((products) => {
+            console.log('shop shop shop',shop._id)
           console.log("get the products info in shop/index page", products);
           res.render("shop/index", { shop, products });
         })
