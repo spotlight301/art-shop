@@ -1,35 +1,40 @@
-<div><img src="/uploads/<%=product.image%>" alt=".."></div>
+<div class="text-center mt-5">
+  <div style="max-width: 300px; margin: auto;">
+      <img src="/uploads/<%=product.image%>" alt="<%=product.productName%>" class="img-fluid rounded">
+  </div>
+</div>
 
-<form class="row g-3 mx-3" action="/product/update?_method=PUT" method="post" enctype="multipart/form-data">
-    <div class="col-md-12 text-center mt-5">
+<form class="row g-3 mx-3 mt-4" action="/product/update?_method=PUT" method="post" enctype="multipart/form-data">
+
+  <div class="col-md-12 text-center">
       <h1>Edit Product</h1>
-    </div>
-  
-    <div   class="mb-1">
+  </div>
+  <div class="col-md-12 mb-3">
       <label for="formFile" class="form-label">Upload your product picture here</label>
       <input class="form-control" type="file" id="formFile" name="image" value="<%=product.image%>">
-    </div>
-  
-    <div class="col-md-12 mb-1">
-      <label for="inputusername4" class="form-label">product name</label>
-      <input type="text" class="form-control" id="inputusername4" name="productName" value="<%= product.productName %>">
-    </div>
-  
-    <div class="input-group mb-1 col-md-6 mt-4">
-      <span class="input-group-text">BHD</span>
-      <input type="text" class="form-control" aria-label="Price" name="price" placeholder="price" value="<%= product.price %>">
-      <span class="input-group-text">.00</span>
-    </div>
-  
-   <div class="mb-1">
-    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%= product.description %></textarea>
   </div>
-    
-  
+
+  <div class="col-md-12 mb-3">
+      <label for="inputusername4" class="form-label">Product Name</label>
+      <input type="text" class="form-control" id="inputusername4" name="productName" value="<%= product.productName %>">
+  </div>
+
+  <div class="input-group mb-3 col-md-6">
+      <span class="input-group-text">BHD</span>
+      <input type="text" class="form-control" aria-label="Price" name="price" placeholder="Price" value="<%= product.price %>">
+      <span class="input-group-text">.00</span>
+  </div>
+
+  <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><%= product.description %></textarea>
+  </div>
+
   <input type="hidden" name="shopid" value="<%=shop.userId%>">
   <input type="hidden" name="id" value="<%=product._id%>">
-    <div class="col-12  d-md-flex justify-content-md-end">
+
+  <div class="col-12 d-md-flex justify-content-md-end">
       <button type="submit" class="btn btn-primary">Save Product</button>
-    </div>
-  </form>
+  </div>
+
+</form>
