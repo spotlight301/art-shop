@@ -13,13 +13,13 @@ const { authorized_user, isLogged } = require("../config/authorization");
 router.get(
   "/add",
   isLogged,
-  authorized_user(2),
+  authorized_user([2,3]),
   productController.product_create_get
 );
 router.post(
   "/add",
   isLogged,
-  authorized_user(2),
+  authorized_user([2,3]),
   upload.single("image"),
   productController.product_create_post
 );
@@ -31,20 +31,20 @@ router.get("/list", productController.product_list_get);
 router.get(
   "/edit",
   isLogged,
-  authorized_user(2),
+  authorized_user([2,3]),
   productController.product_edit_get
 );
 router.put(
   "/update",
   isLogged,
-  authorized_user(2),
+  authorized_user([2,3]),
   upload.single("image"),
   productController.product_update_put
 );
 router.get(
   "/delete",
   isLogged,
-  authorized_user(2),
+  authorized_user([2,3]),
   productController.product_delete_get
 );
 

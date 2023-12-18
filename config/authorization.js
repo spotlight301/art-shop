@@ -1,7 +1,7 @@
 const passport = require('passport')
-module.exports.authorized_user = function (role){
+module.exports.authorized_user = function (roles){
   return async (req,res,next) => {
-    if(req.user.role == role){
+    if(roles.includes(req.user.role) ){
       next();
     }else{
       res.redirect("/")

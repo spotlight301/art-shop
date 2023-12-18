@@ -1,0 +1,24 @@
+<main>
+  <section class="py-5 text-center container">
+      <h1 class="display-4">Add Your Shop</h1>
+  </section>
+  <form method="POST" action="/shop/update" class="row g-3" enctype="multipart/form-data">
+      <div class="col-md-12">
+          <label class="form-label">Shop Name</label>
+          <input type="text" name="name" value="<%= shop.name%>" class="form-control">
+      </div>
+      <div>Upload Logo</div>
+      <div class="input-group mb-3">
+        <p>current logo:</p>
+        <img src="/uploads/<%=shop.logo%>" alt="<%= shop.name%>">
+      </div>
+      <div class="input-group mb-3">
+          <input type="file" name="logo" class="form-control" id="inputGroupFile02">
+      </div>
+      <input type="hidden" name="id" value="<%= shop._id %>"> 
+      <div class="col-12">
+          <button type="submit" class="btn btn-primary">Edit Shop</button>
+      </div>         
+  </form>
+
+</main>

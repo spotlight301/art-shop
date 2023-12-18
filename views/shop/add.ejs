@@ -2,7 +2,13 @@
     <section class="py-5 text-center container">
         <h1 class="display-4">Add Your Shop</h1>
     </section>
-    <form method="POST" action="/shop/add" class="row g-3" enctype="multipart/form-data">
+    <form method="POST" <%if(user.role == 2){%> action="<%=actionURL%>" <%}else{%>action= "<%=actionURLAdmin%>" <%}%>class="row g-3" enctype="multipart/form-data">
+        <%if(user.role == 3 ){%>
+        <div class="col-md-12">
+            <label class="form-label">For username:</label>
+            <input type="text" name="username" class="form-control">
+        </div>
+        <%}%>
         <div class="col-md-12">
             <label class="form-label">Shop Name</label>
             <input type="text" name="name" class="form-control">

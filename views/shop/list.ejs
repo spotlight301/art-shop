@@ -1,0 +1,25 @@
+<div>
+  <div class="album py-5 bg-body-tertiary">
+    <a href="/shop/admin/add/">Add shop</a>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% shops.forEach(function(shop) { %>
+          <div class="col">
+            <a href="/shop/detail?id=<%= shop._id %>">
+              <div class="card shadow-sm">
+                <img style="width: 100%; height: 400px; object-fit:cover;" src="/uploads/<%= shop.logo %>" alt="<%= shop.name %> Image">
+                <div class="card-body">
+                  <h1 class="card-title"><%= shop.name %></h1>
+                  <%if (user.role ==3) {%>
+                  <a href="/shop/edit?id=<%=shop._id%>">Edit shop</a>
+                  <a href="/shop/delete?id=<%=shop._id%>">Delete shop</a>
+                  <%}%>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</div>
