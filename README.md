@@ -23,6 +23,14 @@ Multi-shop e-commerce platform tailored specifically for passionate and talented
 ![products_page_after_search](https://github.com/SaraNedhal/artist-ecommerce/assets/100535445/65c81854-d88b-4cf6-aa3b-2cb6be833f5e)
    ## products detail page:
 ![singular_product_page](https://github.com/SaraNedhal/artist-ecommerce/assets/100535445/236355ba-0c57-416f-b657-382a5c40e8a4)
+   ## Home Page:
+![Screen Shot 2023-12-20 at 8 51 02 AM](https://github.com/SaraNedhal/artist-ecommerce/assets/151125979/ec62b4a1-e2e7-44ab-be7f-198519581394)
+   ## Profile:
+![Screen Shot 2023-12-20 at 8 51 13 AM](https://github.com/SaraNedhal/artist-ecommerce/assets/151125979/17f7e2ed-ace8-4d84-9b51-151abf9dcf0a)
+   ## Seller Shop:
+![image](https://github.com/SaraNedhal/artist-ecommerce/assets/151125979/95b39bfc-d683-49af-8eb8-3757baef75da)
+
+
 
    
 
@@ -61,6 +69,8 @@ In version 1, the web application has 3 type of users:
 
 ### Order Page:
 ![Screen Shot 2023-12-14 at 12 04 45 PM](https://github.com/SaraNedhal/artist-ecommerce/assets/100535445/da371cba-0ec7-46f2-9e7c-5305f1cd877c)
+
+
 
 
 # Favorite features in website
